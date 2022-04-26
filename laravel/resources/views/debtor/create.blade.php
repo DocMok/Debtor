@@ -61,11 +61,12 @@
                             <div class="col-6">
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="documents[]" id="documents" multiple>
-                                        <label class="custom-file-label" for="documents">Choose file</label>
+                                        <input type="file" class="custom-file-input" name="documents[]" id="documents"
+                                               multiple>
+                                        <label class="custom-file-label" for="documents">Выберите файл</label>
                                     </div>
                                     <div class="input-group-append">
-                                        <span class="input-group-text">Upload</span>
+                                        <span class="input-group-text">Загрузить</span>
                                     </div>
                                 </div>
                             </div>
@@ -74,8 +75,15 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="start_date">Дата вступления в силу</label>
-                                    <input type="text" class="form-control" id="start_date" name="start_date"
-                                           placeholder="Дата вступления в силу">
+                                    <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
+                                        <input type="text" id="start_date" name="start_date"
+                                               class="form-control datetimepicker-input"
+                                               data-target="#reservationdatetime">
+                                        <div class="input-group-append" data-target="#reservationdatetime"
+                                             data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -106,7 +114,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Создать</button>
                     </div>
                 </form>
 
@@ -114,4 +122,20 @@
 
         </div>
     </div>
+@endsection
+@section('plugins.daterangepicker', true)
+
+@section('js')
+    <script type="text/javascript">
+        $(function () {
+            bsCustomFileInput.init();
+        });
+        $('#reservationdatetime').datetimepicker({
+            // icons: {
+            //     time: 'far fa-clock'
+            // },
+            format: "YYYY-MM-DD"
+        });
+    </script>
+
 @endsection

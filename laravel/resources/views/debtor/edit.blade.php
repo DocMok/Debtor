@@ -65,8 +65,15 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="start_date">Дата вступления в силу</label>
-                                    <input type="text" class="form-control" id="start_date" name="start_date"
-                                           placeholder="Дата вступления в силу" value="{{$debtor->start_date}}">
+                                    <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
+                                        <input type="text" id="start_date" name="start_date"
+                                               class="form-control datetimepicker-input"
+                                               data-target="#reservationdatetime" value="{{old('start_date') ?? $debtor->start_date}}">
+                                        <div class="input-group-append" data-target="#reservationdatetime"
+                                             data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -122,7 +129,8 @@
                     <li data-id="{{$file->id}}" class="card-header" style="list-style-type:none">
                         <a class="img-thumbnail w-100" title="preview"
                            href="{{url('storage/'.$file->path)}}">{{$file->path}} </a>
-                        <div class="btn  btn-danger btn-sm task-delete card-tools" style="margin-bottom: 10px;"><i class="fas fa-trash "></i></div>
+                        <div class="btn  btn-danger btn-sm task-delete card-tools" style="margin-bottom: 10px;"><i
+                                class="fas fa-trash "></i></div>
                     </li>
 
                 @endforeach
@@ -149,8 +157,20 @@
         </div>
     </div>
 @endsection
+@section('plugins.daterangepicker', true)
 
 @section('js')
+    <script type="text/javascript">
+        $(function () {
+            bsCustomFileInput.init();
+        });
+        $('#reservationdatetime').datetimepicker({
+            // icons: {
+            //     time: 'far fa-clock'
+            // },
+            format: "YYYY-MM-DD"
+        });
+    </script>
     <script>
         $('#show-files').click(showModal)
         $('.close-modal').click(closeModal)
@@ -186,7 +206,7 @@
             getCsrfToken(function (token) {
                 console.log($(e.target));
                 let id = $(e.target).parent().data('id');
-                if(!id){
+                if (!id) {
                     id = $(e.target).parent().parent().data('id');
                 }
                 $.ajaxSetup({
@@ -208,7 +228,6 @@
         }
 
         $('.task-delete').click(removeTask);
-
 
 
     </script>

@@ -37,7 +37,7 @@
             </form>
         </div>
         <div class="col-6 row offset-2">
-            <a id="filter" class="btn btn-sm " href="{{route('debtor.exportByDate')}}?">export</a>
+            <a id="filter" class="btn btn-sm " href="{{route('debtor.exportByDate')}}?">Экспорт в XLSX</a>
             <div class="form-group">
                 <div class="input-group offset-1">
                     <div id="reportrange"

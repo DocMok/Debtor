@@ -45,6 +45,7 @@ Route::middleware('auth')->prefix('dashboard')->group(function() {
     Route::get('user/edit', [UserControler::class, 'edit'])->name('user.edit');
     Route::put('user/update', [UserControler::class, 'update'])->name('user.update');
     Route::get('user/search', [UserControler::class, 'search'])->name('user.search');
+    Route::get('user/personal', [UserControler::class, 'show'])->name('user.personal');
 
 
     Route::post('file/store', [FileController::class, 'store'])->name('file.store');
