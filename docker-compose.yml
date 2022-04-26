@@ -19,12 +19,9 @@ services:
     restart: always
     ports:
       - 80:80
-      - 443:443
     volumes:
       - ./laravel:/var/www/html
       - ./containers/nginx/config:/etc/nginx/conf.d
-      - ./containers/nginx/ssl:/etc/nginx/ssl
-
 
   mariadb:
     image: mariadb:10.4
@@ -33,9 +30,9 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: zcZz416Be
-      MYSQL_DATABASE: kareliadspdb
-      MYSQL_PASSWORD: qTksZIgK
+      MYSQL_ROOT_PASSWORD: 02021992
+      MYSQL_DATABASE: debtordb
+      MYSQL_PASSWORD: 02021992
       MYSQL_USER: root
     volumes:
       - ./db:/var/lib/mysql
