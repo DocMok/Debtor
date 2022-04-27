@@ -44,7 +44,7 @@ class DebtorController extends Controller
         return view('debtor.create');
     }
 
-    public function store(Request $request)
+    public function store(DebtorStoreRequest $request)
     {
         $debtor = Debtor::create([
             'name' => $request->name,
@@ -75,7 +75,7 @@ class DebtorController extends Controller
     }
 
 
-    public function update(Request $request)
+    public function update(DebtorUpdateRequest $request)
     {
         $debtor = Debtor::findOrFail($request->debtor_id);
 

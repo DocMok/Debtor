@@ -20,6 +20,7 @@ class DebtorStoreRequest extends FormRequest
             'chsi' => 'string|required',
             'nip' => 'string|required',
             'start_date' => 'date|required',
+            'bin' => 'string|required',
             'debit_sum' => 'numeric|required',
             'account_block_name' => 'string|required',
             'arrest_to' => 'string|required',

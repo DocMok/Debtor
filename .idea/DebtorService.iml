@@ -126,6 +126,11 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/psr/cache" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

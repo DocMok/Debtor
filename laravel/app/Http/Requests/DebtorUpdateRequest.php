@@ -7,16 +7,6 @@ use Illuminate\Foundation\Http\FormRequest;
 class DebtorUpdateRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return false;
-    }
-
-    /**
      * Get the validation rules that apply to the request.
      *
      * @return array
@@ -24,7 +14,18 @@ class DebtorUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'string|required',
+            'iin' => 'string|required',
+            'address' => 'string|required',
+            'chsi' => 'string|required',
+            'nip' => 'string|required',
+            'start_date' => 'date|required',
+            'bin' => 'string|required',
+            'debit_sum' => 'numeric|required',
+            'account_block_name' => 'string|required',
+            'arrest_to' => 'string|required',
+            'files' => 'array',
+            'files.*' => 'file|mimes:pdf,doc,docx,xls,xlsx',
         ];
     }
 }
