@@ -39,7 +39,6 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th style="width: 10px">#</th>
             <th style="width: 40%">Имя</th>
             <th style="width: 25%">Почта</th>
             <th style="width: 35%">Действия</th>
@@ -49,7 +48,6 @@
 
         @foreach($users as $user)
             <tr>
-                <td>{{$user->id}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
                 <td>

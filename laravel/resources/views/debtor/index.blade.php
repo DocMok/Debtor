@@ -58,7 +58,6 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th style="width: 10px">#</th>
             <th style="width: 40%">ФИО</th>
             <th style="width: 25%">Долг</th>
             <th style="width: 35%">Действия</th>
@@ -68,7 +67,6 @@
 
         @foreach($debtors as $debtor)
             <tr>
-                <td>{{$debtor->id}}</td>
                 <td>{{$debtor->name}}</td>
                 <td>{{$debtor->debit_sum}}</td>
                 <td>

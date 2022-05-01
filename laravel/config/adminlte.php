@@ -241,7 +241,16 @@ return [
             'url'  => "dashboard/debtor/index",
             'icon' => 'fas fa-fw fa-user',
         ],
-
+        [
+            'text' => 'Недавние',
+            'url'  => "dashboard/debtor/recent",
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Погашенные',
+            'url'  => "dashboard/debtor/canceled",
+            'icon' => 'fas fa-fw fa-user',
+        ],
 
     ],
 

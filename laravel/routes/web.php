@@ -35,6 +35,8 @@ Route::middleware('auth')->prefix('dashboard')->group(function() {
     Route::get('/debtor/filter', [DebtorController::class, 'filter'])->name('debtor.filter');
     Route::get('/debtor/export-by-date', [DebtorController::class, 'exportByRange'])->name('debtor.exportByDate');
     Route::get('/debtor/export/{debtor}', [DebtorController::class, 'exportDebtor'])->name('debtor.export');
+    Route::get('/debtor/recent', [DebtorController::class, 'recent'])->name('debtor.recent');
+    Route::get('/debtor/canceled', [DebtorController::class, 'canceled'])->name('debtor.canceled');
 
 
 

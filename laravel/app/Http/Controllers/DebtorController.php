@@ -20,8 +20,22 @@ class DebtorController extends Controller
 
     public function index()
     {
-        $debtors = Debtor::paginate(20);
+        $debtors = Debtor::where('debit_sum', '!=', '0')->orderBy('name')->paginate(20);
         return view('debtor.index', compact('debtors'));
+    }
+
+    public function recent()
+    {
+        $debtors = Debtor::where('debit_sum', '!=', '0')->orderBy('start_date', 'asc')->paginate(20)->reverse();
+        return view('debtor.index', compact('debtors'));
+
+    }
+
+    public function canceled()
+    {
+        $debtors = Debtor::where('debit_sum', '0' )->orderBy('name')->paginate(20);
+        return view('debtor.index', compact('debtors'));
+
     }
 
     public function show(Debtor $debtor)
@@ -96,7 +110,9 @@ class DebtorController extends Controller
 
     public function destroy(Debtor $debtor)
     {
-        $debtor->delete();
+        $debtor->update([
+            'debit_sum' => '0'
+        ]);
         return redirect(route('index'));
     }
 
