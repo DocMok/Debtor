@@ -125,6 +125,10 @@
       <path value="$PROJECT_DIR$/laravel/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/laravel/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/laravel/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/laravel/vendor/spatie/temporary-directory" />
+      <path value="$PROJECT_DIR$/laravel/vendor/spatie/laravel-package-tools" />
+      <path value="$PROJECT_DIR$/laravel/vendor/spatie/laravel-db-snapshots" />
+      <path value="$PROJECT_DIR$/laravel/vendor/spatie/db-dumper" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

@@ -131,6 +131,10 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/spatie/temporary-directory" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/spatie/laravel-package-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/spatie/laravel-db-snapshots" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/spatie/db-dumper" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

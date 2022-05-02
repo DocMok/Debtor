@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Debtor;
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
@@ -31,5 +33,11 @@ class FileController extends Controller
         $file->delete();
         return $file;
 
+    }
+
+    public function dbDump()
+    {
+        Artisan::call('snapshot:create dump');
+        return Storage::disk('snapshots')->download("dump.sql");
     }
 }
