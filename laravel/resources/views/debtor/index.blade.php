@@ -9,12 +9,12 @@
             <div class="col-sm-6">
                 <h1 class="m-0">Список должников</h1>
             </div>
-            @if(Auth::user() && Auth::user()->is_admin)
+
             <div class="col-sm-3 breadcrumb float-sm-right">
                 <a href="{{route('debtor.create')}}" type="button" class="btn btn-block btn-primary">Добавить
                     должника</a>
             </div>
-                @endif
+
 
         </div>
     </div>
@@ -70,7 +70,7 @@
                 <td>{{$debtor->name}}</td>
                 <td>{{$debtor->debit_sum}}</td>
                 <td>
-                    @if(Auth::user() && Auth::user()->is_admin)
+
                     <form class='card-title' method=get
                           action="{{route('debtor.show', $debtor->id)}}" style="margin:2px;">
                         @csrf
@@ -96,7 +96,7 @@
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>
-@endif
+
                     <form class='card-title' method=get
                           action="{{route('debtor.export', $debtor->id)}}" style="margin:2px;">
                         @csrf

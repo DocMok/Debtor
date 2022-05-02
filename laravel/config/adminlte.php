@@ -251,11 +251,6 @@ return [
             'url'  => "dashboard/debtor/canceled",
             'icon' => 'fas fa-fw fa-user',
         ],
-        [
-            'text' => 'Дамп базы',
-            'url'  => "dashboard/db-dump",
-            'icon' => 'fas fa-fw fa-user',
-        ],
     ],
 
     /*

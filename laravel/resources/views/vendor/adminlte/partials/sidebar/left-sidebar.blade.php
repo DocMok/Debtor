@@ -18,8 +18,11 @@
                 @if(!config('adminlte.sidebar_nav_accordion'))
                     data-accordion="false"
                 @endif>
-                {{-- Configured sidebar links --}}
+
                 @each('adminlte::partials.sidebar.menu-item', $adminlte->menu('sidebar'), 'item')
+                @if(Auth::user() && Auth::user()->is_admin)
+                    <li class="nav-item"><a class="nav-link" href="{{route('db.dump')}}"><i class="fas fa-fw fa-user"></i><p> Снапшот </p></a></li>
+                @endif
             </ul>
         </nav>
     </div>
