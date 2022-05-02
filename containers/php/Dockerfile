@@ -9,6 +9,7 @@ RUN apt update && apt install -y \
         libxml2-dev \
         zlib1g-dev \
         libzip-dev \
+       git curl libmcrypt-dev default-mysql-client\
     && docker-php-ext-install -j$(nproc) iconv \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-configure gd \
