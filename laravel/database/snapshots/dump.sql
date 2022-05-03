@@ -32,7 +32,7 @@ CREATE TABLE `debtors` (
 
 LOCK TABLES `debtors` WRITE;
 /*!40000 ALTER TABLE `debtors` DISABLE KEYS */;
-INSERT INTO `debtors` VALUES (1,'вася','12345678','садова 37','орган','12313','1994-02-02 00:00:00',123456.00,'12121','sdfg','2022-04-22 12:06:01','2022-04-22 12:06:01','123'),(3,'ebanko','sdsdsd','sdsdsd','sdsdsds','12313','1994-02-02 00:00:00',0.00,'3123','13123','2022-04-22 15:04:04','2022-05-03 05:07:32','sdsdsdsd'),(4,'asdasd','asdasd','asdasd','asdasd','asdasd','2022-04-22 00:00:00',0.00,'sdaf','asdf','2022-04-23 05:55:50','2022-05-03 05:07:27','asdasd');
+INSERT INTO `debtors` VALUES (1,'вася','1234567890','садова 37','орган','12313','1994-02-02 00:00:00',123456.00,'12121','sdfg','2022-04-22 12:06:01','2022-05-03 05:19:21','123'),(3,'ebanko','sdsdsd','sdsdsd','sdsdsds','12313','1994-02-02 00:00:00',0.00,'3123','13123','2022-04-22 15:04:04','2022-05-03 05:07:32','sdsdsdsd'),(4,'asdasd','asdasd','asdasd','asdasd','asdasd','2022-04-22 00:00:00',0.00,'sdaf','asdf','2022-04-23 05:55:50','2022-05-03 05:07:27','asdasd');
 /*!40000 ALTER TABLE `debtors` ENABLE KEYS */;
 UNLOCK TABLES;
 DROP TABLE IF EXISTS `failed_jobs`;

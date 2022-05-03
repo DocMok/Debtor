@@ -39,8 +39,8 @@ class FileController extends Controller
     public function dbDump()
     {
 
-        Artisan::call('snapshot:cleanup --keep=0');
-        Artisan::call('snapshot:create dump');
+         Artisan::call('snapshot:cleanup --keep=0');
+       Artisan::call('snapshot:create dump');
         return Storage::disk('snapshots')->download("dump.sql");
     }
 }
