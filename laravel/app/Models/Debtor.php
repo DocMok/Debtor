@@ -16,7 +16,7 @@ class Debtor extends Model
 
     public function files()
     {
-        return $this->hasMany(File::class);
+        return $this->hasMany(Files::class);
     }
 
     public function getStartDateAttribute() {

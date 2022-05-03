@@ -7,7 +7,7 @@ use App\Http\Requests\DebtorUpdateRequest;
 use App\Http\Requests\ExportDebtorsRequest;
 use App\Http\Traits\ApiResponsable;
 use App\Models\Debtor;
-use App\Models\File;
+use App\Models\Files;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -77,7 +77,7 @@ class DebtorController extends Controller
             foreach ($request->file('documents') as $document) {
                 $documentPath = $document->store($debtor->id, ['disk' => 'public']);
                 if ($documentPath) {
-                    File::create([
+                    Files::create([
                         'path' => $documentPath,
                         'debtor_id' => $debtor->id,
                     ]);

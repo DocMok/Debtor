@@ -20,19 +20,19 @@ CREATE TABLE `debtors` (
   `chsi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nip` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `start_date` datetime NOT NULL,
-  `debit_sum` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `debit_sum` double(8,2) NOT NULL,
   `account_block_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `arrest_to` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `bin` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `debtors` WRITE;
 /*!40000 ALTER TABLE `debtors` DISABLE KEYS */;
-INSERT INTO `debtors` VALUES (1,'asf','124124124','asf','asf','124214','2022-04-07 00:00:00','0','124124','124214','2022-04-26 14:46:12','2022-05-01 05:54:27','asf'),(2,'ddddd','12345789','asdasdasd','asdasdasd','12345678','2022-04-22 00:00:00','12421411111111111112222222222222222333333333333333333333335555555','asdasdasd','asdasdasd','2022-04-27 04:17:53','2022-04-27 04:21:48','asdasdasd'),(3,'lolo','123','asdasd','asdasd','123123','2022-05-23 00:00:00','157.3','asdf','sadf','2022-05-01 04:50:54','2022-05-01 04:50:54','123'),(4,'aaa','12456','asdf','sadf','124214','2022-05-24 00:00:00','0','asdf','sadf','2022-05-01 04:52:05','2022-05-01 05:54:21','asdf'),(5,'Монохромный','12456','asdf','sadf','124214','2022-05-28 00:00:00','124214111111111111122222222222222223333333333333333333333355555555555544444444444448888888','asdf','sadf','2022-05-01 04:54:49','2022-05-01 04:54:49','123'),(6,'ааааа','12456','asdf','asdasdasd','124214','2022-05-07 00:00:00','0','asdf','sadf','2022-05-01 04:55:28','2022-05-01 05:54:42','123');
+INSERT INTO `debtors` VALUES (1,'вася','12345678','садова 37','орган','12313','1994-02-02 00:00:00',123456.00,'12121','sdfg','2022-04-22 12:06:01','2022-04-22 12:06:01','123'),(3,'ebanko','sdsdsd','sdsdsd','sdsdsds','12313','1994-02-02 00:00:00',0.00,'3123','13123','2022-04-22 15:04:04','2022-05-03 05:07:32','sdsdsdsd'),(4,'asdasd','asdasd','asdasd','asdasd','asdasd','2022-04-22 00:00:00',0.00,'sdaf','asdf','2022-04-23 05:55:50','2022-05-03 05:07:27','asdasd');
 /*!40000 ALTER TABLE `debtors` ENABLE KEYS */;
 UNLOCK TABLES;
 DROP TABLE IF EXISTS `failed_jobs`;
@@ -67,12 +67,12 @@ CREATE TABLE `files` (
   PRIMARY KEY (`id`),
   KEY `files_debtor_id_foreign` (`debtor_id`),
   CONSTRAINT `files_debtor_id_foreign` FOREIGN KEY (`debtor_id`) REFERENCES `debtors` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `files` WRITE;
 /*!40000 ALTER TABLE `files` DISABLE KEYS */;
-INSERT INTO `files` VALUES (1,3,'3/x6Zkika6IzvnIpx01kG5R3vrHrpuJuFiFCV8hdnh.png','2022-05-01 04:50:54','2022-05-01 04:50:54');
+INSERT INTO `files` VALUES (1,1,'1/zTpb4rvHVcmXOowTVZRycl0WgQI2VVEpCJa19T7v.jpg','2022-04-22 12:06:04','2022-04-22 12:06:04'),(2,1,'1/A8VUQAbKDXGj824EVgac9sp2lSr0SYaPHwVDeUJM.png','2022-04-22 12:06:05','2022-04-22 12:06:05'),(3,1,'1/UimBUQD7t0FIoDvyeO0zM4A7BJCUiej3gaTIqfxu.png','2022-04-22 12:06:05','2022-04-22 12:06:05'),(6,3,'3/7Lgw2cvMPI5cnESO2Gu19nyNWoMfmsygG84WzLqY.jpg','2022-04-22 15:04:07','2022-04-22 15:04:07'),(7,3,'3/4MopTcDBdt72jwTSuR5zb7cyAB1YYANeiccvwvyd.png','2022-04-22 15:04:09','2022-04-22 15:04:09'),(8,3,'3/cpptOyoG2sroQhnkFzUgNOpGRHAQjZe0dBuhQ8Bj.png','2022-04-22 15:04:10','2022-04-22 15:04:10'),(9,3,'3/JvGNaGF7Yjbf7bgrFLanPQqgO8NzVuBUn04bp9d6.jpg','2022-04-22 17:20:50','2022-04-22 17:20:50'),(10,3,'3/WsSzAaKr8Z3l7cymLAgd6IQ2rNW1gYUjmFx1PCt2.png','2022-04-22 17:20:51','2022-04-22 17:20:51'),(11,3,'3/JM1rf5sMyhQKxHqD8rF6rAhEDrzM657DzQe8Yn8L.png','2022-04-22 17:20:52','2022-04-22 17:20:52'),(12,3,'3/oSk5c2HY8ACuVNjRHH7AuvNJw8kKT3dwfoetq8Z2.png','2022-04-22 17:20:52','2022-04-22 17:20:52'),(13,3,'3/I5UslCM1t4lrp1WiWYEpPs26702dtw3oabsAfDLo.jpg','2022-04-22 17:23:30','2022-04-22 17:23:30'),(14,3,'3/7nGm0qGyf5xpXFWVl7HZwQiJghNymRRT2s1KM815.png','2022-04-22 17:23:30','2022-04-22 17:23:30'),(15,3,'3/dCtlD9I8lJ2Co4IKDLCN8xHZTBftvAiMSDNNTiOE.png','2022-04-22 17:23:31','2022-04-22 17:23:31'),(16,3,'3/Z33M3rbljhHgN50YfpMooVVJD0tGBhfHGDIs75nS.png','2022-04-22 17:23:31','2022-04-22 17:23:31'),(17,3,'3/uasDWGq1BtAP0ktzLC38AFj3lHpdnChIRxY0sCmS.png','2022-04-22 17:23:31','2022-04-22 17:23:31'),(18,1,'1/Ahj8kMNlQDem9QT9RbLupayNhlHAN9R3x3lfF9SC.png','2022-04-22 17:24:02','2022-04-22 17:24:02'),(19,1,'1/lJ6OuRHEskWlrs4e8uJdT4ss5Pr8VxsMxxSVA9Xu.png','2022-04-22 17:24:02','2022-04-22 17:24:02'),(20,1,'1/5kMzuOA63yJJEfdg0UAoTb5LqH2GDLhPw2cyLAST.png','2022-04-22 17:24:03','2022-04-22 17:24:03'),(21,1,'1/fNZaDwUB53GiiW9vitOnWrggjfxLsQP7wdmdbotY.png','2022-04-22 17:24:03','2022-04-22 17:24:03'),(22,1,'1/sWGnGOcAGJiLsRFmdMx2MzWn55i026oGwSkcTUca.png','2022-04-22 17:24:03','2022-04-22 17:24:03'),(23,1,'1/dEFHfJ4bkMZ8Xfi13vmgA0yOKZWt81LMLnmqoE7J.png','2022-04-22 17:24:03','2022-04-22 17:24:03');
 /*!40000 ALTER TABLE `files` ENABLE KEYS */;
 UNLOCK TABLES;
 DROP TABLE IF EXISTS `migrations`;
@@ -83,12 +83,12 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2019_12_14_000001_create_personal_access_tokens_table',1),(5,'2022_04_22_103436_create_debtors_table',1),(6,'2022_04_22_104653_create_files_table',1),(7,'2022_04_22_115627_add_role_column_to_users_table',1),(8,'2022_04_22_131138_add_bin_column_to_debtors_table',1),(9,'2022_04_26_164442_add_phone_and_organization_columns_to_users_table',1),(10,'2022_04_27_070217_change_debit_sum_column_type_in_debtors_table',2);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2019_12_14_000001_create_personal_access_tokens_table',1),(5,'2022_04_22_103436_create_debtors_table',1),(6,'2022_04_22_104653_create_files_table',1),(7,'2022_04_22_115627_add_role_column_to_users_table',1),(8,'2022_04_22_131138_add_bin_column_to_debtors_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 DROP TABLE IF EXISTS `password_resets`;
@@ -142,16 +142,14 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `is_admin` tinyint(1) NOT NULL,
-  `organization` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin@gmail.com',NULL,'$2y$10$/znT8lPJ0eElMA8Q2RHL7eqG04L71HFlWyxUySOY6AcuHZ75woNHy',NULL,'2022-04-26 14:13:46','2022-04-26 14:13:46',1,NULL,NULL);
+INSERT INTO `users` VALUES (1,'admin','admin@gmail.com',NULL,'$2y$10$/iT7Sjai/WpF/Gkkw7ow7Oulalt7nk1Gv8T/LYE0A5uql71kysELa',NULL,'2022-04-22 10:27:08','2022-04-22 10:27:08',1),(2,'duda','scrapply1992@gmail.com',NULL,'$2y$10$iuRbkICq04DQnEYpToV8lOTWuvwFJmsyNLWk0CggxvJkqnMkNETeC',NULL,'2022-04-22 10:57:54','2022-04-22 10:57:54',0),(3,'asdasd','asdasd@mail.ru',NULL,'$2y$10$Ws.Alo2KAqGZBff3po.kCOKPU3OURTsptiYeaZ3gEatFMNENsgqpu',NULL,'2022-04-22 10:59:08','2022-04-22 10:59:08',0),(9,'scrap','scrap@gmail.com',NULL,'$2y$10$vhm6q15kdx0G6/vKPSIohencEUfu4GP26UoR9Xr/o8g5FjFspwTdi',NULL,'2022-04-23 07:16:26','2022-04-23 07:16:26',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
